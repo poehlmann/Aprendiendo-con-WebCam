@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Motion Detection</title>
+        <script src="main.js"></script>
+        
+        <style>
+            .webcam-display {
+                display: inline-block;
+                position: relative;
+                width: 960px;
+                height: 720px;
+            }
+                .webcam-display > video {
+                    position: absolute;
+                    top: 0; left: 0;
+                    width: 100%; height: 100%;
+                }
+            
+            .webcam-selection-game {
+                z-index: 1;
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+            }
+            
+            .game-prop {
+                position: absolute;
+            }
+
+            .game-inicio {
+                width: 59px;
+                height: 100px;
+                border-radius: 28%;
+                background: red;
+            }
+            .game-inicio:hover {
+                background: white;
+            }
+            .game-littlecircle{
+                width: 100px;
+                height: 100px;
+                border-radius: 100%;
+            }
+            .game-littlecircle:hover {
+                background: initial;
+            }
+            .game-bigcircle{
+                width: 200px;
+                height: 200px;
+                border-radius: 100%;
+            }
+            .game-bigcircle:hover{
+                background: initial;
+            }
+            .game-littlesquare{
+                width: 100px;
+                height: 100px;
+                border-radius: 0%;
+            }
+            .game-littlesquare:hover{
+                background: initial;
+            }
+            .game-bigsquare{
+                width: 200px;
+                height: 200px;
+                border-radius: 0%;
+            }
+            .game-bigsquare:hover{
+                background: initial;
+            }
+        </style>
+    </head>
+    <body>
+    <span id="espera">Espera:</span>
+    <span id="puntaje"></span>
+        <template id="game-template">
+            <button data-id="0" data-x="900" data-y="400" class="game-prop game-inicio" onclick="iniciar();">
+                INICIO
+            </button>
+            <button data-id="1" data-x="30" data-y="30" class="game-prop game-bigcircle" id="CirculoGrande" onclick="presionado(this.id);">
+            </button>
+            <button data-id="2" data-x="300" data-y="30" class="game-prop game-littlesquare" id="CuadradoPequenho" onclick="presionado(this.id);">
+            </button>
+            <button data-id="3" data-x="500" data-y="30" class="game-prop game-littlecircle" id="CirculoPequenho" onclick="presionado(this.id);">
+            </button>
+            <button data-id="4" data-x="700" data-y="30" class="game-prop game-bigsquare" id="CuadradoGrande" onclick="presionado(this.id);">
+            </button>
+        </template>
+        <script src="juego.js"></script>
+        <span id="orden1"></span>>
+        <span id="orden2"></span>>
+        <span id="orden3"></span>>
+        <span id="orden4"></span>>
+        <span id="orden5"></span>>
+        <span id="orden6"></span>>
+    </body>
+</html>
